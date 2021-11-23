@@ -33,8 +33,7 @@ h2 {
 }
 
 /* search section */
-.search-container {
-    
+.search-container {  
     flex-direction: column;
 }
 
@@ -47,24 +46,11 @@ h2 {
     justify-content: center;
 }
 
-.filter-region {
-    
-}
-
 /* countries */
-.country-container {
-    
-}
-
 .country-card {
-    text-align: center;
-    
+    text-align: center;  
     background-color: #fff;
     margin: 1rem;
-}
-
-.country-card__image {
-    
 }
 
 .country-container {
