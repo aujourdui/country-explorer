@@ -3,8 +3,12 @@
 - 
 ---------------------------------------+--------------------------------------*/
 
+const fetchData = () => async {
+    const await
+}
+
 const addCountryName = () => {
-  for (let i = 0; i < 8; i++) {
+for (let i = 0; i < 8; i++) {
     const countryName = document.getElementsByClassName("country-name")[i];
     countryName.innerHTML = "German";
   }
@@ -12,11 +16,11 @@ const addCountryName = () => {
 addCountryName();
 
 const zoomIn = () => {
-  for (let i = 0; i < 8; i++) {
-    const countryCard = document.getElementsByClassName("country-card")[i];
-    countryCard.addEventListener("click", (e) => {
-      e.preventDefault();
-      console.log("hello");
+    for (let i = 0; i < 8; i++) {
+        const countryCard = document.getElementsByClassName("country-card")[i];
+        countryCard.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log("hello");
     });
   }
 };
