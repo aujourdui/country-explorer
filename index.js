@@ -6,7 +6,6 @@
 const fetchData = async () => {
   const response = await fetch("./resources/data.json");
   const data = await response.json();
-  console.log(data);
   const germanyData = data[84];
   const USData = data[239];
   const brazilData = data[31];
@@ -15,14 +14,20 @@ const fetchData = async () => {
   const alandIslandsData = data[1];
   const albaniaData = data[2];
   const algeriaData = data[3];
-  console.log(germanyData);
-  console.log(USData);
-  console.log(brazilData);
-  console.log(icelandData);
-  console.log(afghanistanData);
-  console.log(alandIslandsData);
-  console.log(albaniaData);
-  console.log(algeriaData);
+
+  const createNewList = () => {
+    const newList = [];
+    newList.push(germanyData);
+    newList.push(USData);
+    newList.push(brazilData);
+    newList.push(icelandData);
+    newList.push(afghanistanData);
+    newList.push(alandIslandsData);
+    newList.push(albaniaData);
+    newList.push(algeriaData);
+    console.log(newList);
+  };
+  createNewList();
 };
 fetchData();
 
