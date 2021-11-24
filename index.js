@@ -12,10 +12,12 @@ const addCountryName = () => {
 addCountryName();
 
 const zoomIn = () => {
-  const countryCard = document.getElementsByClassName("country-card")[0];
-  countryCard.addEventListener("click", () => {
-    // e.preventDefault();
-    alert("hello");
-  });
+  for (let i = 0; i < 8; i++) {
+    const countryCard = document.getElementsByClassName("country-card")[i];
+    countryCard.addEventListener("click", (e) => {
+      e.preventDefault();
+      console.log("hello");
+    });
+  }
 };
 zoomIn();
