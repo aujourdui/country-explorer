@@ -4,7 +4,7 @@
 ---------------------------------------+--------------------------------------*/
 
 const addCountryName = () => {
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 8; i++) {
     const countryName = document.getElementsByClassName("country-name")[i];
     countryName.innerHTML = "hello world";
   }
