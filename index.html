@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./style--pc.css">  
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style--pc.css" />
     <title>Country Explorer</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header clearfix">
-        <h2>Where in the world?</h2>
-        <div class="dark-mode">
-            <i class="far fa-moon"></i><button class="dark-mode__button">Dark Mode</button>
-        </div>
+      <h2>Where in the world?</h2>
+      <div class="dark-mode">
+        <i class="far fa-moon"></i
+        ><button class="dark-mode__button">Dark Mode</button>
+      </div>
     </header>
     <div class="search-container">
-        <div class="search-country">
-            <i class="fas fa-search"></i><input type="text" class="search-country__input">
-        </div>
-        <div class="filter-region">
-            <select name="" id="">
-                <option value="Africa">Africa</option>
-                <option value="America">America</option>
-                <option value="Asia">Asia</option>
-                <option value="Europe">Europe</option>
-                <option value="Oceania">Oceania</option>
-            </select>
-        </div>
+      <div class="search-country">
+        <i class="fas fa-search"></i
+        ><input type="text" class="search-country__input" />
+      </div>
+      <div class="filter-region">
+        <select name="" id="">
+          <option value="Africa">Africa</option>
+          <option value="America">America</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="Oceania">Oceania</option>
+        </select>
+      </div>
     </div>
     <!-- <div class="item">
         <img src="" alt="#">
@@ -38,56 +43,58 @@
         <p>Capital</p>
     </div> -->
     <div class="country-container">
-        <!-- This is zoom in state -->
-        
-        <div class="country-card">
-            <div class="image-container country-card__image">
-                <img src="./resources/images/dummy/German.png" alt="#">
-            </div>
-            <p>German</p>
+      <!-- This is zoom in state -->
+
+      <div class="country-card">
+        <div class="image-container country-card__image">
+          <img src="./resources/images/dummy/German.png" alt="#" />
         </div>
-        <div class="country-card">
-            <div class="image-container country-card__image">
-                <img src="./resources/images/dummy/German.png" alt="#">
-            </div>
-            <p>German</p>
+        <p class="country-name"></p>
+      </div>
+      <div class="country-card">
+        <div class="image-container country-card__image">
+          <img src="./resources/images/dummy/German.png" alt="#" />
         </div>
-        <div class="country-card">
-            <div class="image-container country-card__image">
-                <img src="./resources/images/dummy/German.png" alt="#">
-            </div>
-            <p>German</p>
+        <p class="country-name"></p>
+      </div>
+      <div class="country-card">
+        <div class="image-container country-card__image">
+          <img src="./resources/images/dummy/German.png" alt="#" />
         </div>
-        <div class="country-card">
-            <div class="image-container country-card__image">
-                <img src="./resources/images/dummy/German.png" alt="#">
-            </div>
-            <p>German</p>
+        <p class="country-name"></p>
+      </div>
+      <div class="country-card">
+        <div class="image-container country-card__image">
+          <img src="./resources/images/dummy/German.png" alt="#" />
         </div>
-        <div class="country-card">
-            <div class="image-container country-card__image">
-                <img src="./resources/images/dummy/German.png" alt="#">
-            </div>
-            <p>German</p>
+        <p class="country-name"></p>
+      </div>
+      <div class="country-card">
+        <div class="image-container country-card__image">
+          <img src="./resources/images/dummy/German.png" alt="#" />
         </div>
-        <div class="country-card">
-            <div class="image-container country-card__image">
-                <img src="./resources/images/dummy/German.png" alt="#">
-            </div>
-            <p>German</p>
+        <p class="country-name"></p>
+      </div>
+      <div class="country-card">
+        <div class="image-container country-card__image">
+          <img src="./resources/images/dummy/German.png" alt="#" />
         </div>
-        <div class="country-card">
-            <div class="image-container country-card__image">
-                <img src="./resources/images/dummy/German.png" alt="#">
-            </div>
-            <p>German</p>
+        <p class="country-name"></p>
+      </div>
+      <div class="country-card">
+        <div class="image-container country-card__image">
+          <img src="./resources/images/dummy/German.png" alt="#" />
         </div>
-        <div class="country-card">
-            <div class="image-container country-card__image">
-                <img src="./resources/images/dummy/German.png" alt="#">
-            </div>
-            <p>German</p>
+        <p class="country-name"></p>
+      </div>
+      <div class="country-card">
+        <div class="image-container country-card__image">
+          <img src="./resources/images/dummy/German.png" alt="#" />
         </div>
+        <p class="country-name"></p>
+      </div>
     </div>
-</body>
+    <script src="countries.json"></script>
+    <script src="index.js"></script>
+  </body>
 </html>
