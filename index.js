@@ -71,6 +71,14 @@ const zoomIn = (numberOfCountry) => {
   }
 };
 
+const zoomOut = () => {
+  const modal = document.getElementById("myModal");
+  modal.addEventListener("click", (e) => {
+    e.preventDefault();
+    modal.style.display = "none";
+  });
+};
+
 const main = async () => {
   const countries = await fetchCountries();
   // TODO: populate on declaration?
@@ -83,6 +91,7 @@ const main = async () => {
   updateCountryNames(countryNames);
   handleSearch(countryNames);
   zoomIn(countries.length);
+  zoomOut();
 };
 
 main();
