@@ -1,51 +1,86 @@
 /*-------------------------------------+----------------------------------------
                                   Global TODO:
-- 
+- features
+  - filter by region
 ---------------------------------------+--------------------------------------*/
 
-const fetchData = async () => {
-  const response = await fetch("./resources/data.json");
-  const data = await response.json();
-  const germanyData = data[84];
-  const USData = data[239];
-  const brazilData = data[31];
-  const icelandData = data[103];
-  const afghanistanData = data[0];
-  const alandIslandsData = data[1];
-  const albaniaData = data[2];
-  const algeriaData = data[3];
+'use strict'
 
-  const createNewList = () => {
-    const newList = [];
-    newList.push(germanyData);
-    newList.push(USData);
-    newList.push(brazilData);
-    newList.push(icelandData);
-    newList.push(afghanistanData);
-    newList.push(alandIslandsData);
-    newList.push(albaniaData);
-    newList.push(algeriaData);
-    console.log(newList);
-  };
-  createNewList();
-};
-fetchData();
+const handleSearch = (countryNames) => {
+  // TODO: implement input validation
+  const inputElm = document.querySelector('#search-input');
+  const countryCards = document.querySelectorAll('.country-card');
+  
+  inputElm.addEventListener('keypress', e => {
+    if (e.key === 'Enter') {
+      
+      // check if query exist in country list. if it doesn't, throw error to UI
+      for (let i = 0; i < countryNames.length; i++) {
+        if (countryNames.indexOf(`${inputElm.value}`) === -1) {
+          // TODO: use a non-blocking method to present error to user
+          alert(`${inputElm.value} does not match our records.`);
+          return;
+        }
+      }
 
-const addCountryName = () => {
-  for (let i = 0; i < 8; i++) {
-    const countryName = document.getElementsByClassName("country-name")[i];
-    countryName.innerHTML = "Germany";
+      // {display: none} all, except matching country
+      for (let i = 0; i < countryCards.length; i++) {
+        if (countryCards[i].querySelector('.country-name').innerHTML !=
+           inputElm.value) {
+            countryCards[i].style.display = 'none';
+        }
+      }
+    }
+  });
+
+  // {display: block all}, when input field is cleared
+  inputElm.addEventListener('input', e => {
+    if (inputElm.value === '') {
+      for (let i = 0; i < countryCards.length; i++) {
+        countryCards[i].style.display = 'block';
+      }
+    }
+  });
+}
+
+const fetchCountries = async () => {
+  const countries = await fetch('./resources/db/countries.json')
+    .then(res => res.json())
+    .catch(err => console.error(err));
+
+  return countries;
+}
+
+const updateCountryNames = (countryNames) => {
+  const countryNameElms = document.querySelectorAll('.country-name');
+
+  for (let i = 0; i < countryNameElms.length; i++) {
+    countryNameElms[i].innerHTML = countryNames[i];
   }
-};
-addCountryName();
+}
 
 const zoomIn = () => {
   for (let i = 0; i < 8; i++) {
     const countryCard = document.getElementsByClassName("country-card")[i];
     countryCard.addEventListener("click", (e) => {
       e.preventDefault();
-      console.log("hello");
+      // console.log("hello");
     });
   }
 };
-zoomIn();
+
+const main = async () => {
+  const countries = await fetchCountries();
+  // TODO: populate on declaration?
+  const countryNames = [];
+
+  for (let i = 0; i < countries.length; i++) {
+    countryNames.push(countries[i].name);
+  }
+
+  updateCountryNames(countryNames);
+  handleSearch(countryNames);
+  // zoomIn();
+}
+
+main();
