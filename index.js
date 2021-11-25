@@ -1,51 +1,54 @@
 /*-------------------------------------+----------------------------------------
                                   Global TODO:
-- 
+- new features
+  - search by country name
+  - filter by region
 ---------------------------------------+--------------------------------------*/
 
-const fetchData = async () => {
-  const response = await fetch("./resources/data.json");
-  const data = await response.json();
-  const germanyData = data[84];
-  const USData = data[239];
-  const brazilData = data[31];
-  const icelandData = data[103];
-  const afghanistanData = data[0];
-  const alandIslandsData = data[1];
-  const albaniaData = data[2];
-  const algeriaData = data[3];
+'use strict'
 
-  const createNewList = () => {
-    const newList = [];
-    newList.push(germanyData);
-    newList.push(USData);
-    newList.push(brazilData);
-    newList.push(icelandData);
-    newList.push(afghanistanData);
-    newList.push(alandIslandsData);
-    newList.push(albaniaData);
-    newList.push(algeriaData);
-    console.log(newList);
-  };
-  createNewList();
-};
-fetchData();
+const fetchCountries = async () => {
+  const countries = await fetch('./resources/db/countries.json', {
+    headers:{
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }
+  })
+    .then(res => res.json())
+    .catch(err => console.error(err));
 
-const addCountryName = () => {
-  for (let i = 0; i < 8; i++) {
-    const countryName = document.getElementsByClassName("country-name")[i];
-    countryName.innerHTML = "Germany";
+  return countries;
+}
+
+const updateCountryNames = (countryNames) => {
+  const countryNameElms = document.querySelectorAll('.country-name');
+
+  for (let i = 0; i < countryNameElms.length; i++) {
+    countryNameElms[i].innerHTML = countryNames[i];
   }
-};
-addCountryName();
+}
 
 const zoomIn = () => {
   for (let i = 0; i < 8; i++) {
     const countryCard = document.getElementsByClassName("country-card")[i];
     countryCard.addEventListener("click", (e) => {
       e.preventDefault();
-      console.log("hello");
+      // console.log("hello");
     });
   }
 };
-zoomIn();
+
+const main = async () => {
+  const countries = await fetchCountries();
+  // TODO: populate on declaration?
+  const countryNames = [];
+
+  for (let i = 0; i < countries.length; i++) {
+    countryNames.push(countries[i].name);
+  }
+
+  updateCountryNames(countryNames);
+  // zoomIn();
+}
+
+main();
