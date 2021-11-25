@@ -1,19 +1,50 @@
 /*-------------------------------------+----------------------------------------
                                   Global TODO:
-- new features
-  - search by country name
+- features
   - filter by region
 ---------------------------------------+--------------------------------------*/
 
 'use strict'
 
-const fetchCountries = async () => {
-  const countries = await fetch('./resources/db/countries.json', {
-    headers:{
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
+const handleSearch = (countryNames) => {
+  // TODO: implement input validation
+  const inputElm = document.querySelector('#search-input');
+  const countryCards = document.querySelectorAll('.country-card');
+  
+  inputElm.addEventListener('keypress', e => {
+    if (e.key === 'Enter') {
+      
+      // check if query exist in country list. if it doesn't, throw error to UI
+      for (let i = 0; i < countryNames.length; i++) {
+        if (countryNames.indexOf(`${inputElm.value}`) === -1) {
+          // TODO: use a non-blocking method to present error to user
+          alert(`${inputElm.value} does not match our records.`);
+          return;
+        }
+      }
+
+      // {display: none} all, except matching country
+      for (let i = 0; i < countryCards.length; i++) {
+        if (countryCards[i].querySelector('.country-name').innerHTML !=
+           inputElm.value) {
+            countryCards[i].style.display = 'none';
+        }
+      }
     }
-  })
+  });
+
+  // {display: block all}, when input field is cleared
+  inputElm.addEventListener('input', e => {
+    if (inputElm.value === '') {
+      for (let i = 0; i < countryCards.length; i++) {
+        countryCards[i].style.display = 'block';
+      }
+    }
+  });
+}
+
+const fetchCountries = async () => {
+  const countries = await fetch('./resources/db/countries.json')
     .then(res => res.json())
     .catch(err => console.error(err));
 
@@ -48,6 +79,7 @@ const main = async () => {
   }
 
   updateCountryNames(countryNames);
+  handleSearch(countryNames);
   // zoomIn();
 }
 
