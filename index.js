@@ -60,12 +60,13 @@ const updateCountryNames = (countryNames) => {
   }
 };
 
-const zoomIn = (NumberOfCountry) => {
-  for (let i = 0; i < NumberOfCountry; i++) {
+const zoomIn = (numberOfCountry) => {
+  for (let i = 0; i < numberOfCountry; i++) {
     const countryCard = document.getElementsByClassName("country-card")[i];
+    const modal = document.getElementById("myModal");
     countryCard.addEventListener("click", (e) => {
       e.preventDefault();
-      console.log(`${i}`);
+      modal.style.display = "block";
     });
   }
 };
