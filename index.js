@@ -1,7 +1,4 @@
-/*-------------------------------------+----------------------------------------
-                                  Global TODO:
-- implement modal handler
----------------------------------------+--------------------------------------*/
+
 
 'use strict';
 
@@ -101,13 +98,6 @@ const updateCountryNames = (countryNames) => {
   }
 };
 
-const zoomIn = (numberOfCountry) => {
-  for (let i = 0; i < numberOfCountry; i++) {
-    const countryCard = document.getElementsByClassName('country-card')[i];
-    const modal = document.getElementById('myModal');
-    countryCard.addEventListener('click', (e) => {
-      e.preventDefault();
-      modal.style.display = 'block';
       updateModalCountryInformation(i)
     });
   }
@@ -152,9 +142,15 @@ const main = async () => {
   const countries = await fetchCountries();
   // TODO: populate on declaration?
   const countryNames = [];
+  const countryPopulation = [];
+  const countryRegion = [];
+  const countryCapital = [];
 
   for (let i = 0; i < countries.length; i++) {
     countryNames.push(countries[i].name);
+    countryPopulation.push(countries[i].population);
+    countryRegion.push(countries[i].region);
+    countryCapital.push(countries[i].capital);
   }
 
   updateCountryNames(countryNames);
