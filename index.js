@@ -139,7 +139,6 @@ const updateModalCountryInformation = async (id) => {
   }
 };
 
-
 const zoomOut = () => {
   const modal = document.getElementById('myModal');
   modal.addEventListener('click', (e) => {
