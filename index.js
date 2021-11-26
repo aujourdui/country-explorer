@@ -4,16 +4,15 @@
   - filter by region
 ---------------------------------------+--------------------------------------*/
 
-'use strict'
+"use strict";
 
 const handleSearch = (countryNames) => {
   // TODO: implement input validation
-  const inputElm = document.querySelector('#search-input');
-  const countryCards = document.querySelectorAll('.country-card');
-  
-  inputElm.addEventListener('keypress', e => {
-    if (e.key === 'Enter') {
-      
+  const inputElm = document.querySelector("#search-input");
+  const countryCards = document.querySelectorAll(".country-card");
+
+  inputElm.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
       // check if query exist in country list. if it doesn't, throw error to UI
       for (let i = 0; i < countryNames.length; i++) {
         if (countryNames.indexOf(`${inputElm.value}`) === -1) {
@@ -25,48 +24,59 @@ const handleSearch = (countryNames) => {
 
       // {display: none} all, except matching country
       for (let i = 0; i < countryCards.length; i++) {
-        if (countryCards[i].querySelector('.country-name').innerHTML !=
-           inputElm.value) {
-            countryCards[i].style.display = 'none';
+        if (
+          countryCards[i].querySelector(".country-name").innerHTML !=
+          inputElm.value
+        ) {
+          countryCards[i].style.display = "none";
         }
       }
     }
   });
 
   // {display: block all}, when input field is cleared
-  inputElm.addEventListener('input', e => {
-    if (inputElm.value === '') {
+  inputElm.addEventListener("input", (e) => {
+    if (inputElm.value === "") {
       for (let i = 0; i < countryCards.length; i++) {
-        countryCards[i].style.display = 'block';
+        countryCards[i].style.display = "block";
       }
     }
   });
-}
+};
 
 const fetchCountries = async () => {
-  const countries = await fetch('./resources/db/countries.json')
-    .then(res => res.json())
-    .catch(err => console.error(err));
+  const countries = await fetch("./resources/db/countries.json")
+    .then((res) => res.json())
+    .catch((err) => console.error(err));
 
   return countries;
-}
+};
 
 const updateCountryNames = (countryNames) => {
-  const countryNameElms = document.querySelectorAll('.country-name');
+  const countryNameElms = document.querySelectorAll(".country-name");
 
   for (let i = 0; i < countryNameElms.length; i++) {
     countryNameElms[i].innerHTML = countryNames[i];
   }
-}
+};
 
-const zoomIn = () => {
-  for (let i = 0; i < 8; i++) {
+const zoomIn = (numberOfCountry) => {
+  for (let i = 0; i < numberOfCountry; i++) {
     const countryCard = document.getElementsByClassName("country-card")[i];
+    const modal = document.getElementById("myModal");
     countryCard.addEventListener("click", (e) => {
       e.preventDefault();
-      // console.log("hello");
+      modal.style.display = "block";
     });
   }
+};
+
+const zoomOut = () => {
+  const modal = document.getElementById("myModal");
+  modal.addEventListener("click", (e) => {
+    e.preventDefault();
+    modal.style.display = "none";
+  });
 };
 
 const main = async () => {
@@ -80,7 +90,8 @@ const main = async () => {
 
   updateCountryNames(countryNames);
   handleSearch(countryNames);
-  // zoomIn();
-}
+  zoomIn(countries.length);
+  zoomOut();
+};
 
 main();
