@@ -98,6 +98,13 @@ const updateCountryNames = (countryNames) => {
   }
 };
 
+const zoomIn = (numberOfCountry) => {
+  for (let i = 0; i < numberOfCountry; i++) {
+    const countryCard = document.getElementsByClassName('country-card')[i];
+    const modal = document.getElementById('myModal');
+    countryCard.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.style.display = 'block';
       updateModalCountryInformation(i)
     });
   }
@@ -128,7 +135,6 @@ const updateModalCountryInformation = async (id) => {
       modalInfo.innerHTML = `capital: ${countryCapital[id]}`};
   }
 };
-
 
 const zoomOut = () => {
   const modal = document.getElementById('myModal');
