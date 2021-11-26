@@ -98,11 +98,6 @@ const updateCountryNames = (countryNames) => {
   }
 };
 
-      updateModalCountryInformation(i)
-    });
-  }
-};
-
 const updateModalCountryInformation = async (id) => {
   const countries = await fetchCountries();
   const countryNames = [];
@@ -128,7 +123,6 @@ const updateModalCountryInformation = async (id) => {
       modalInfo.innerHTML = `capital: ${countryCapital[id]}`};
   }
 };
-
 
 const zoomOut = () => {
   const modal = document.getElementById('myModal');
