@@ -108,9 +108,37 @@ const zoomIn = (numberOfCountry) => {
     countryCard.addEventListener('click', (e) => {
       e.preventDefault();
       modal.style.display = 'block';
+      updateModalCountryInformation(i)
     });
   }
 };
+
+const updateModalCountryInformation = async (id) => {
+  const countries = await fetchCountries();
+  const countryNames = [];
+  const countryPopulation = [];
+  const countryRegion = [];
+  const countryCapital = [];
+
+  for (let i = 0; i < countries.length; i++) {
+    countryNames.push(countries[i].name);
+    countryPopulation.push(countries[i].population);
+    countryRegion.push(countries[i].region);
+    countryCapital.push(countries[i].capital);
+  }
+  for (let i = 0; i < 4; i++) {
+    const modalInfo = document.getElementsByClassName("modal-info")[i];
+    if(i == 0) {
+      modalInfo.innerHTML = `country: ${countryNames[id]}`};
+    if(i == 1) {
+      modalInfo.innerHTML = `population: ${countryPopulation[id]}`};
+    if(i == 2) {
+      modalInfo.innerHTML = `region: ${countryRegion[id]}`};
+    if(i == 3) {
+      modalInfo.innerHTML = `capital: ${countryCapital[id]}`};
+  }
+};
+
 
 const zoomOut = () => {
   const modal = document.getElementById('myModal');
