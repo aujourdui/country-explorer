@@ -98,11 +98,6 @@ const updateCountryNames = (countryNames) => {
   }
 };
 
-      updateModalCountryInformation(i)
-    });
-  }
-};
-
 const updateModalCountryInformation = async (id) => {
   const countries = await fetchCountries();
   const countryNames = [];
