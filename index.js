@@ -1,7 +1,7 @@
 /*-------------------------------------+----------------------------------------
-                                  Global TODO:
+                                                                    Global TODO:
 - features
-  - filter by region
+    - filter by region
 ---------------------------------------+--------------------------------------*/
 
 "use strict";
@@ -60,13 +60,40 @@ const updateCountryNames = (countryNames) => {
   }
 };
 
-const zoomIn = (numberOfCountry) => {
-  for (let i = 0; i < numberOfCountry; i++) {
+const updateModalCountryInformation = async (id) => {
+  const countries = await fetchCountries();
+  const countryNames = [];
+  const countryPopulation = [];
+  const countryRegion = [];
+  const countryCapital = [];
+
+  for (let i = 0; i < countries.length; i++) {
+    countryNames.push(countries[i].name);
+    countryPopulation.push(countries[i].population);
+    countryRegion.push(countries[i].region);
+    countryCapital.push(countries[i].capital);
+  }
+  for (let i = 0; i < 4; i++) {
+    const modalInfo = document.getElementsByClassName("modal-info")[i];
+    if(i == 0) {
+      modalInfo.innerHTML = `country: ${countryNames[id]}`};
+    if(i == 1) {
+      modalInfo.innerHTML = `population: ${countryPopulation[id]}`};
+    if(i == 2) {
+      modalInfo.innerHTML = `region: ${countryRegion[id]}`};
+    if(i == 3) {
+      modalInfo.innerHTML = `capital: ${countryCapital[id]}`};
+  }
+};
+
+const zoomIn = (countryLength) => {
+  for (let i = 0; i < countryLength; i++) {
     const countryCard = document.getElementsByClassName("country-card")[i];
     const modal = document.getElementById("myModal");
     countryCard.addEventListener("click", (e) => {
       e.preventDefault();
       modal.style.display = "block";
+      updateModalCountryInformation(i)
     });
   }
 };
@@ -83,9 +110,15 @@ const main = async () => {
   const countries = await fetchCountries();
   // TODO: populate on declaration?
   const countryNames = [];
+  const countryPopulation = [];
+  const countryRegion = [];
+  const countryCapital = [];
 
   for (let i = 0; i < countries.length; i++) {
     countryNames.push(countries[i].name);
+    countryPopulation.push(countries[i].population);
+    countryRegion.push(countries[i].region);
+    countryCapital.push(countries[i].capital);
   }
 
   updateCountryNames(countryNames);
