@@ -1,5 +1,3 @@
-
-
 'use strict';
 
 const getCountryListByRegion = (region) => {
@@ -98,6 +96,18 @@ const updateCountryNames = (countryNames) => {
   }
 };
 
+const zoomIn = (numberOfCountry) => {
+  for (let i = 0; i < numberOfCountry; i++) {
+    const countryCard = document.getElementsByClassName('country-card')[i];
+    const modal = document.getElementById('myModal');
+    countryCard.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.style.display = 'block';
+      updateModalCountryInformation(i)
+    });
+  }
+};
+
 const updateModalCountryInformation = async (id) => {
   const countries = await fetchCountries();
   const countryNames = [];
@@ -111,6 +121,9 @@ const updateModalCountryInformation = async (id) => {
     countryRegion.push(countries[i].region);
     countryCapital.push(countries[i].capital);
   }
+  const modalImg = document.getElementById("modal-image")
+  modalImg.src = `./resources/images/${countryNames[id]}.png`
+
   for (let i = 0; i < 4; i++) {
     const modalInfo = document.getElementsByClassName("modal-info")[i];
     if(i == 0) {
