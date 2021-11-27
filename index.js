@@ -1,5 +1,3 @@
-
-
 'use strict';
 
 const getCountryListByRegion = (region) => {
@@ -123,6 +121,9 @@ const updateModalCountryInformation = async (id) => {
     countryRegion.push(countries[i].region);
     countryCapital.push(countries[i].capital);
   }
+  const modalImg = document.getElementById("modal-image")
+  modalImg.src = `./resources/images/${countryNames[id]}.png`
+
   for (let i = 0; i < 4; i++) {
     const modalInfo = document.getElementsByClassName("modal-info")[i];
     if(i == 0) {
