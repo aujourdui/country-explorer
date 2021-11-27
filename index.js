@@ -145,6 +145,20 @@ const zoomOut = () => {
   });
 };
 
+const darkModeToggler = () => {
+  const body = document.body;
+  const title = document.getElementById("title");
+  const iconSearch = document.querySelector(".fa-search")
+  const iconMoon = document.querySelector(".fa-moon")
+  const cardContainer = document.querySelector(".country-container")
+
+  body.classList.toggle("change-dark-mode");
+  title.classList.toggle("change-dark-mode")
+  iconSearch.classList.toggle("change-dark-mode")
+  iconMoon.classList.toggle("change-dark-mode")
+  cardContainer.classList.toggle("change-dark-mode")
+}
+
 const main = async () => {
   const countries = await fetchCountries();
   // TODO: populate on declaration?
