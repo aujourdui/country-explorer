@@ -10,6 +10,7 @@ body {
   margin: 0;
 }
 
+
 /* Common */
 .image-container img {
   width: 100%;
@@ -49,6 +50,11 @@ h2 {
   vertical-align: middle;
 }
 
+.change-dark-mode {
+  background-color: black;
+  color: white;
+}
+
 .dark-mode__button {
   padding: 3px 5px;
   border: 1px solid #333333;
@@ -84,7 +90,7 @@ h2 {
 }
 
 .country-container {
-  background-color: #eeeeee;
+  /* background-color: #eeeeee; */
 }
 
 /* modal */
