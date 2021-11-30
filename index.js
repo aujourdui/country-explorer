@@ -127,7 +127,7 @@ const updateModalCountryInformation = async (id) => {
   for (let i = 0; i < 4; i++) {
     const modalInfo = document.getElementsByClassName("modal-info")[i];
     if(i == 0) {
-      modalInfo.innerHTML = `country: ${countryNames[id]}`};
+      modalInfo.innerHTML = `${countryNames[id]}`};
     if(i == 1) {
       modalInfo.innerHTML = `population: ${countryPopulation[id]}`};
     if(i == 2) {
