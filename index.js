@@ -146,16 +146,22 @@ const zoomOut = () => {
 };
 
 const darkModeToggler = () => {
-  const body = document.body;
+  const header = document.querySelector("header")
   const title = document.getElementById("title");
+  const searchCountry = document.querySelector(".search-country")
+  const searchInput = document.getElementById("search-input")
+  const filterRegion = document.querySelector(".filter-region")
   const iconSearch = document.querySelector(".fa-search")
   const iconMoon = document.querySelector(".fa-moon")
   const cardContainer = document.querySelector(".country-container")
 
-  body.classList.toggle("change-dark-mode");
-  title.classList.toggle("change-dark-mode")
-  iconSearch.classList.toggle("change-dark-mode")
-  iconMoon.classList.toggle("change-dark-mode")
+  header.classList.toggle("change-dark-mode-light")
+  title.classList.toggle("change-dark-mode-light")
+  searchCountry.classList.toggle("change-dark-mode")
+  searchInput.classList.toggle("change-dark-mode-light")
+  filterRegion.classList.toggle("change-dark-mode")
+  iconSearch.classList.toggle("change-dark-mode-light")
+  iconMoon.classList.toggle("change-dark-mode-light")
   cardContainer.classList.toggle("change-dark-mode")
 }
 
