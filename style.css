@@ -51,9 +51,15 @@ h2 {
 }
 
 .change-dark-mode {
-  background-color: black;
+  background-color: #222831;
   color: white;
 }
+
+.change-dark-mode-light {
+  background-color: #2C394B;
+  color: white;
+}
+
 
 .dark-mode__button {
   padding: 3px 5px;
