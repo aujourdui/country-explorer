@@ -96,8 +96,8 @@ const updateCountryNames = (countryNames) => {
   }
 };
 
-const zoomIn = (numberOfCountry) => {
-  for (let i = 0; i < numberOfCountry; i++) {
+const zoomIn = (countryIndex) => {
+  for (let i = 0; i < countryIndex; i++) {
     const countryCard = document.getElementsByClassName('country-card')[i];
     const modal = document.getElementById('myModal');
     countryCard.addEventListener('click', (e) => {
@@ -151,22 +151,31 @@ const darkModeToggler = () => {
   const title = document.getElementById("title");
   const searchCountry = document.querySelector(".search-country")
   const searchInput = document.getElementById("search-input")
-  const searchContainer = document.querySelector(".search-container")
   const filterRegion = document.querySelector(".filter-region")
+  const regions = document.querySelector(".regions")
   const iconSearch = document.querySelector(".fa-search")
   const iconMoon = document.querySelector(".fa-moon")
   const cardContainer = document.querySelector(".country-container")
-  
+  const countryCards = document.querySelectorAll(".country-card")
+  const countryNames = document.querySelectorAll(".country-name")
+  const modal = document.querySelector(".modal")
+
   body.classList.toggle("change-dark-mode")
   header.classList.toggle("change-dark-mode-light")
   title.classList.toggle("change-dark-mode-light")
   searchCountry.classList.toggle("change-dark-mode-light")
   searchInput.classList.toggle("change-dark-mode-light")
-  // searchContainer.classList.toggle("change-dark-mode")
   filterRegion.classList.toggle("change-dark-mode-light")
+  regions.classList.toggle("change-dark-mode-light")
   iconSearch.classList.toggle("change-dark-mode-light")
   iconMoon.classList.toggle("change-dark-mode-light")
   cardContainer.classList.toggle("change-dark-mode")
+  modal.classList.toggle("modal-dark")
+
+  for (let i = 0; i < countryCards.length; i++) {
+    countryCards[i].classList.toggle("change-dark-mode-light")
+    countryNames[i].classList.toggle("change-dark-mode-light")
+  }
 }
 
 const main = async () => {
