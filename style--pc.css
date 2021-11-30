@@ -22,8 +22,12 @@
       margin-top: 0;
       }
     #modal-column-second {
-      margin-top: 5.2rem;
+      margin-top: 5.5rem;
 			margin-left: 6rem;
     }
+
+		#region {
+			margin: 1rem 0;
+		}
 
 }
