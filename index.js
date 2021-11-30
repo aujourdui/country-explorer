@@ -129,11 +129,11 @@ const updateModalCountryInformation = async (id) => {
     if(i == 0) {
       modalInfo.innerHTML = `${countryNames[id]}`};
     if(i == 1) {
-      modalInfo.innerHTML = `population: ${countryPopulation[id]}`};
+      modalInfo.innerHTML = `${countryPopulation[id]}`};
     if(i == 2) {
-      modalInfo.innerHTML = `region: ${countryRegion[id]}`};
+      modalInfo.innerHTML = `${countryRegion[id]}`};
     if(i == 3) {
-      modalInfo.innerHTML = `capital: ${countryCapital[id]}`};
+      modalInfo.innerHTML = `${countryCapital[id]}`};
   }
 };
 
