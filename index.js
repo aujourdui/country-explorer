@@ -156,7 +156,7 @@ const darkModeToggler = () => {
   const iconSearch = document.querySelector(".fa-search")
   const iconMoon = document.querySelector(".fa-moon")
   const cardContainer = document.querySelector(".country-container")
-
+  
   body.classList.toggle("change-dark-mode")
   header.classList.toggle("change-dark-mode-light")
   title.classList.toggle("change-dark-mode-light")
