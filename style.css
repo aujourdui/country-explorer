@@ -10,7 +10,6 @@ body {
   margin: 0;
 }
 
-
 /* Common */
 .image-container img {
   width: 100%;
@@ -144,7 +143,7 @@ input:focus::placeholder {
 }
 
 .country-container {
-  /* background-color: #eeeeee; */
+  background-color: #eeeeee;
 }
 
 /* modal */
