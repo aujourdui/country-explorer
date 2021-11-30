@@ -6,14 +6,28 @@
 
     /* countries */
     .country-container {
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
     }
 
-    .country-card {       
-        width: 22%;
+    .country-card {
+      width: 22%;
     }
 
-   
+    /* modal */
+
+    #modal-column-first{
+      margin: 3rem;
+      margin-top: 0;
+      }
+    #modal-column-second {
+      margin-top: 5.5rem;
+			margin-left: 6rem;
+    }
+
+		#region {
+			margin: 1rem 0;
+		}
+
 }

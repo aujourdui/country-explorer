@@ -1,8 +1,3 @@
-/*-------------------------------------+----------------------------------------
-                                  Global TODO:
-- implement modal handler
----------------------------------------+--------------------------------------*/
-
 'use strict';
 
 const getCountryListByRegion = (region) => {
@@ -126,19 +121,21 @@ const updateModalCountryInformation = async (id) => {
     countryRegion.push(countries[i].region);
     countryCapital.push(countries[i].capital);
   }
+  const modalImg = document.getElementById("modal-image")
+  modalImg.src = `./resources/images/${countryNames[id]}.png`
+
   for (let i = 0; i < 4; i++) {
     const modalInfo = document.getElementsByClassName("modal-info")[i];
     if(i == 0) {
-      modalInfo.innerHTML = `country: ${countryNames[id]}`};
+      modalInfo.innerHTML = `${countryNames[id]}`};
     if(i == 1) {
-      modalInfo.innerHTML = `population: ${countryPopulation[id]}`};
+      modalInfo.innerHTML = `${countryPopulation[id]}`};
     if(i == 2) {
-      modalInfo.innerHTML = `region: ${countryRegion[id]}`};
+      modalInfo.innerHTML = `${countryRegion[id]}`};
     if(i == 3) {
-      modalInfo.innerHTML = `capital: ${countryCapital[id]}`};
+      modalInfo.innerHTML = `${countryCapital[id]}`};
   }
 };
-
 
 const zoomOut = () => {
   const modal = document.getElementById('myModal');
@@ -148,13 +145,39 @@ const zoomOut = () => {
   });
 };
 
+const darkModeToggler = () => {
+  const header = document.querySelector("header")
+  const title = document.getElementById("title");
+  const searchCountry = document.querySelector(".search-country")
+  const searchInput = document.getElementById("search-input")
+  const filterRegion = document.querySelector(".filter-region")
+  const iconSearch = document.querySelector(".fa-search")
+  const iconMoon = document.querySelector(".fa-moon")
+  const cardContainer = document.querySelector(".country-container")
+
+  header.classList.toggle("change-dark-mode-light")
+  title.classList.toggle("change-dark-mode-light")
+  searchCountry.classList.toggle("change-dark-mode")
+  searchInput.classList.toggle("change-dark-mode-light")
+  filterRegion.classList.toggle("change-dark-mode")
+  iconSearch.classList.toggle("change-dark-mode-light")
+  iconMoon.classList.toggle("change-dark-mode-light")
+  cardContainer.classList.toggle("change-dark-mode")
+}
+
 const main = async () => {
   const countries = await fetchCountries();
   // TODO: populate on declaration?
   const countryNames = [];
+  const countryPopulation = [];
+  const countryRegion = [];
+  const countryCapital = [];
 
   for (let i = 0; i < countries.length; i++) {
     countryNames.push(countries[i].name);
+    countryPopulation.push(countries[i].population);
+    countryRegion.push(countries[i].region);
+    countryCapital.push(countries[i].capital);
   }
 
   updateCountryNames(countryNames);
