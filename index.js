@@ -96,8 +96,8 @@ const updateCountryNames = (countryNames) => {
   }
 };
 
-const zoomIn = (numberOfCountry) => {
-  for (let i = 0; i < numberOfCountry; i++) {
+const zoomIn = (countryIndex) => {
+  for (let i = 0; i < countryIndex; i++) {
     const countryCard = document.getElementsByClassName('country-card')[i];
     const modal = document.getElementById('myModal');
     countryCard.addEventListener('click', (e) => {
@@ -111,29 +111,49 @@ const zoomIn = (numberOfCountry) => {
 const updateModalCountryInformation = async (id) => {
   const countries = await fetchCountries();
   const countryNames = [];
+  const countryNativeNames = [];
   const countryPopulation = [];
   const countryRegion = [];
+  const countrySubRegion = [];
   const countryCapital = [];
+  const countryTopLevelDomain = [];
+  const countryCurrencies = [];
+  const countryLanguages = [];
 
   for (let i = 0; i < countries.length; i++) {
     countryNames.push(countries[i].name);
+    countryNativeNames.push(countries[i].nativeName);
     countryPopulation.push(countries[i].population);
     countryRegion.push(countries[i].region);
+    countrySubRegion.push(countries[i].subRegion);
     countryCapital.push(countries[i].capital);
+    countryTopLevelDomain.push(countries[i].topLevelDomain);
+    countryCurrencies.push(countries[i].currencies);
+    countryLanguages.push(countries[i].languages);
   }
   const modalImg = document.getElementById("modal-image")
   modalImg.src = `./resources/images/${countryNames[id]}.png`
 
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 9; i++) {
     const modalInfo = document.getElementsByClassName("modal-info")[i];
     if(i == 0) {
       modalInfo.innerHTML = `${countryNames[id]}`};
     if(i == 1) {
-      modalInfo.innerHTML = `${countryPopulation[id]}`};
+      modalInfo.innerHTML = `${countryNativeNames[id]}`};
     if(i == 2) {
-      modalInfo.innerHTML = `${countryRegion[id]}`};
+      modalInfo.innerHTML = `${countryPopulation[id]}`};
     if(i == 3) {
+      modalInfo.innerHTML = `${countryRegion[id]}`};
+    if(i == 4) {
+      modalInfo.innerHTML = `${countrySubRegion[id]}`};
+    if(i == 5) {
       modalInfo.innerHTML = `${countryCapital[id]}`};
+    if(i == 6) {
+      modalInfo.innerHTML = `${countryTopLevelDomain[id]}`};
+    if(i == 7) {
+      modalInfo.innerHTML = `${countryCurrencies[id]}`};
+    if(i == 8) {
+      modalInfo.innerHTML = `${countryLanguages[id]}`};
   }
 };
 
@@ -151,37 +171,40 @@ const darkModeToggler = () => {
   const title = document.getElementById("title");
   const searchCountry = document.querySelector(".search-country")
   const searchInput = document.getElementById("search-input")
-  const searchContainer = document.querySelector(".search-container")
   const filterRegion = document.querySelector(".filter-region")
+  const regions = document.querySelector(".regions")
   const iconSearch = document.querySelector(".fa-search")
   const iconMoon = document.querySelector(".fa-moon")
   const cardContainer = document.querySelector(".country-container")
-  
+  const countryCards = document.querySelectorAll(".country-card")
+  const countryNames = document.querySelectorAll(".country-name")
+  const modal = document.querySelector(".modal")
+
   body.classList.toggle("change-dark-mode")
   header.classList.toggle("change-dark-mode-light")
   title.classList.toggle("change-dark-mode-light")
   searchCountry.classList.toggle("change-dark-mode-light")
   searchInput.classList.toggle("change-dark-mode-light")
-  // searchContainer.classList.toggle("change-dark-mode")
   filterRegion.classList.toggle("change-dark-mode-light")
+  regions.classList.toggle("change-dark-mode-light")
   iconSearch.classList.toggle("change-dark-mode-light")
   iconMoon.classList.toggle("change-dark-mode-light")
   cardContainer.classList.toggle("change-dark-mode")
+  modal.classList.toggle("modal-dark")
+
+  for (let i = 0; i < countryCards.length; i++) {
+    countryCards[i].classList.toggle("change-dark-mode-light")
+    countryNames[i].classList.toggle("change-dark-mode-light")
+  }
 }
 
 const main = async () => {
   const countries = await fetchCountries();
   // TODO: populate on declaration?
   const countryNames = [];
-  const countryPopulation = [];
-  const countryRegion = [];
-  const countryCapital = [];
 
   for (let i = 0; i < countries.length; i++) {
     countryNames.push(countries[i].name);
-    countryPopulation.push(countries[i].population);
-    countryRegion.push(countries[i].region);
-    countryCapital.push(countries[i].capital);
   }
 
   updateCountryNames(countryNames);
