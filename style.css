@@ -221,3 +221,7 @@ input:focus::placeholder {
 .modal-info {
   font-size: 1rem;
 }
+
+.modal-info-container{
+  margin: 1rem 0;
+}
