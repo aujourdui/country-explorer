@@ -111,28 +111,48 @@ const zoomIn = (countryIndex) => {
 const updateModalCountryInformation = async (id) => {
   const countries = await fetchCountries();
   const countryNames = [];
+  const countryNativeNames = [];
   const countryPopulation = [];
   const countryRegion = [];
+  const countrySubRegion = [];
   const countryCapital = [];
+  const countryTopLevelDomain = [];
+  const countryCurrencies = [];
+  const countryLanguages = [];
 
   for (let i = 0; i < countries.length; i++) {
     countryNames.push(countries[i].name);
+    countryNativeNames.push(countries[i].nativeName);
     countryPopulation.push(countries[i].population);
     countryRegion.push(countries[i].region);
+    countrySubRegion.push(countries[i].subRegion);
     countryCapital.push(countries[i].capital);
+    countryTopLevelDomain.push(countries[i].topLevelDomain);
+    countryCurrencies.push(countries[i].currencies);
+    countryLanguages.push(countries[i].languages);
   }
   const modalImg = document.getElementById("modal-image")
   modalImg.src = `./resources/images/${countryNames[id]}.png`
 
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 9; i++) {
     const modalInfo = document.getElementsByClassName("modal-info")[i];
     if(i == 0) {
       modalInfo.innerHTML = `${countryNames[id]}`};
     if(i == 1) {
       modalInfo.innerHTML = `${countryPopulation[id]}`};
     if(i == 2) {
-      modalInfo.innerHTML = `${countryRegion[id]}`};
+      modalInfo.innerHTML = `${countrySubRegion[id]}`};
     if(i == 3) {
+      modalInfo.innerHTML = `${countryRegion[id]}`};
+    if(i == 4) {
+      modalInfo.innerHTML = `${countryCapital[id]}`};
+    if(i == 5) {
+      modalInfo.innerHTML = `${countryTopLevelDomain[id]}`};
+    if(i == 6) {
+      modalInfo.innerHTML = `${countryCurrencies[id]}`};
+    if(i == 7) {
+      modalInfo.innerHTML = `${countryLanguages[id]}`};
+    if(i == 8) {
       modalInfo.innerHTML = `${countryCapital[id]}`};
   }
 };
