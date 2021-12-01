@@ -136,27 +136,24 @@ const updateModalCountryInformation = async (id) => {
 
   for (let i = 0; i < 9; i++) {
     const modalInfo = document.getElementsByClassName("modal-info")[i];
-    const modalColumnFirst = document.getElementById("modal-column-first")
-    const modalColumnSecond = document.getElementById("modal-column-second")
     if(i == 0) {
       modalInfo.innerHTML = `${countryNames[id]}`};
     if(i == 1) {
-      modalInfo.innerHTML = `${countryPopulation[id]}`};
+      modalInfo.innerHTML = `${countryNativeNames[id]}`};
     if(i == 2) {
-      modalInfo.innerHTML = `${countrySubRegion[id]}`};
+      modalInfo.innerHTML = `${countryPopulation[id]}`};
     if(i == 3) {
       modalInfo.innerHTML = `${countryRegion[id]}`};
-      // modalColumnFirst.style.marginRight = "0px";
     if(i == 4) {
-      modalInfo.innerHTML = `${countryCapital[id]}`};
+      modalInfo.innerHTML = `${countrySubRegion[id]}`};
     if(i == 5) {
-      modalInfo.innerHTML = `${countryTopLevelDomain[id]}`};
-    if(i == 6) {
-      modalInfo.innerHTML = `${countryCurrencies[id]}`};
-    if(i == 7) {
-      modalInfo.innerHTML = `${countryLanguages[id]}`};
-    if(i == 8) {
       modalInfo.innerHTML = `${countryCapital[id]}`};
+    if(i == 6) {
+      modalInfo.innerHTML = `${countryTopLevelDomain[id]}`};
+    if(i == 7) {
+      modalInfo.innerHTML = `${countryCurrencies[id]}`};
+    if(i == 8) {
+      modalInfo.innerHTML = `${countryLanguages[id]}`};
   }
 };
 
@@ -205,15 +202,9 @@ const main = async () => {
   const countries = await fetchCountries();
   // TODO: populate on declaration?
   const countryNames = [];
-  const countryPopulation = [];
-  const countryRegion = [];
-  const countryCapital = [];
 
   for (let i = 0; i < countries.length; i++) {
     countryNames.push(countries[i].name);
-    countryPopulation.push(countries[i].population);
-    countryRegion.push(countries[i].region);
-    countryCapital.push(countries[i].capital);
   }
 
   updateCountryNames(countryNames);
