@@ -25,12 +25,12 @@
     /* modal */
 
     #modal-column-first{
-      margin: 3rem;
-      margin-top: 0;
+      margin: 0 4rem 3rem 3rem;
       }
     #modal-column-second {
-      margin-top: 5.5rem;
-			margin-left: 6rem;
+      margin: 5.2rem 0 0 0;
+      /* margin-top: 5.2rem;
+			margin-left: 4rem; */
     }
 
 		#region {

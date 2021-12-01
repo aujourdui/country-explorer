@@ -136,6 +136,8 @@ const updateModalCountryInformation = async (id) => {
 
   for (let i = 0; i < 9; i++) {
     const modalInfo = document.getElementsByClassName("modal-info")[i];
+    const modalColumnFirst = document.getElementById("modal-column-first")
+    const modalColumnSecond = document.getElementById("modal-column-second")
     if(i == 0) {
       modalInfo.innerHTML = `${countryNames[id]}`};
     if(i == 1) {
@@ -144,6 +146,7 @@ const updateModalCountryInformation = async (id) => {
       modalInfo.innerHTML = `${countrySubRegion[id]}`};
     if(i == 3) {
       modalInfo.innerHTML = `${countryRegion[id]}`};
+      // modalColumnFirst.style.marginRight = "0px";
     if(i == 4) {
       modalInfo.innerHTML = `${countryCapital[id]}`};
     if(i == 5) {
