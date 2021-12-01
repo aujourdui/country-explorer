@@ -51,9 +51,20 @@ h2 {
 }
 
 .change-dark-mode {
-  background-color: black;
+  background-color: #222831;
   color: white;
 }
+
+.change-dark-mode-light {
+  background-color: #2C394B;
+  color: white;
+}
+
+.change-dark-mode-light::-webkit-input-placeholder {
+  background-color: #2C394B;
+  color: white;
+}
+
 
 .dark-mode__button {
   padding: 3px 5px;
@@ -71,22 +82,71 @@ h2 {
 /* search section */
 .search-container {
   flex-direction: column;
+  display: flex;
+  align-content: space-around;
+  padding: 0 30px;
+  margin-top: 20px;
+  gap: 20px;
 }
 
 .search-country {
   display: flex;
   justify-content: center;
+  position: relative;
+  outline: none;
+  width: 400px;
+  height: 40px;
+  border: none;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  font-size: 0.8rem;
 }
 
 .search-country__input {
   justify-content: center;
+  width: 300px;
+  border: none;
+  outline: none;
 }
+
+.fas.fa-search {
+  /* color: rgba(0, 0, 0, 0.3); */
+  position: absolute;
+  top: 13px;
+  left: 17px;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+.filter-region {
+  position: relative;
+  outline: none;
+  width: 200px;
+  height: 40px;
+  border: none;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+.regions {
+  position: absolute;
+  top: 11px;
+  left: 50px;
+  border: none;
+  outline: none;
+  font-size: 0.8rem;
+  /* color: rgba(0, 0, 0, 0.5); */
+}
+
 
 /* countries */
 .country-card {
   text-align: center;
-  background-color: #fff;
+  /* background-color: #fff; */
   margin: 1rem;
+  border: 1px solid rgba(0,0,0,0.2);
 }
 
 .country-container {
@@ -94,39 +154,74 @@ h2 {
 }
 
 /* modal */
-/* desktop modal */
 .modal {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
   z-index: 99; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
-  /* max-width: 600px; */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  width: 100%;
+  height: 100%;
+  overflow: auto;/* Enable scroll if needed */
+  background-color:
+   rgba(255, 255, 255, 0.8);
+}
+
+.modal-dark {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   overflow: auto;
-   /* Enable scroll if needed */
-  background-color: rgb(255, 255, 255); /* Fallback color */
-  background-color: rgba(255, 255, 255, 0.8); /* Black w/ opacity */
+  background-color:
+  rgba(0, 0, 0, 0.8)
+}
+
+.modal-dark h3 {
+  color:white;
+}
+
+.modal-dark span {
+  color:white;
 }
 
 #modal-content{
-  display: block;
-  text-align: center;
+  display: flex;
   width: 87%;
   height: 87%;
+  margin: 0 2rem;
+}
+
+#modal-content p{
+  margin: 0.5rem 0;
 }
 
 #modal-image {
   display: block;
-  margin: auto;
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height:50%;
+  max-width: 500px;
+}
+
+@media (max-width: 700px) {
+  #modal-content{
+    display:block;
+  }
+}
+
+#modal-country{
+  font-size: 2rem;
 }
 
 .modal-info {
-  font-size: 1.5rem;
+  font-size: 1rem;
+}
+
+.modal-info-container{
+  margin: 1rem 0;
 }
