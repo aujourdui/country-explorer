@@ -1,12 +1,11 @@
 @media (min-width: 40rem) {
-    
     /* common */
     * {
         font-family: Arial, Helvetica, sans-serif;
         box-sizing: border-box;
         color: #333333;
       }
-      
+
       body {
         margin: 0;
       }
@@ -29,8 +28,6 @@
       }
     #modal-column-second {
       margin: 5.2rem 0 0 0;
-      /* margin-top: 5.2rem;
-			margin-left: 4rem; */
     }
 
 		#region {
