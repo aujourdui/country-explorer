@@ -134,8 +134,11 @@ const updateModalCountryInformation = async (id) => {
     countryLanguages.push(countries[i].languages);
   }
   const modalImg = document.getElementById("modal-image")
-  console.log(countryNamesLowerCase)
-  modalImg.src = `./resources/images/${countryNamesLowerCase[id]}.png`
+  if(id==1 || id==5){
+    modalImg.src = `./resources/images/${countryNames[id]}.png`
+  } else{
+    modalImg.src = `./resources/images/${countryNamesLowerCase[id]}.png`
+  }
 
   for (let i = 0; i < 9; i++) {
     const modalInfo = document.getElementsByClassName("modal-info")[i];
