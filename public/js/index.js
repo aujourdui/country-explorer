@@ -111,6 +111,7 @@ const zoomIn = (countryIndex) => {
 const updateModalCountryInformation = async (id) => {
   const countries = await fetchCountries();
   const countryNames = [];
+  const countryNamesLowerCase = [];
   const countryNativeNames = [];
   const countryPopulation = [];
   const countryRegion = [];
@@ -122,6 +123,7 @@ const updateModalCountryInformation = async (id) => {
 
   for (let i = 0; i < countries.length; i++) {
     countryNames.push(countries[i].name);
+    countryNamesLowerCase.push(countries[i].name.toLowerCase());
     countryNativeNames.push(countries[i].nativeName);
     countryPopulation.push(countries[i].population);
     countryRegion.push(countries[i].region);
@@ -132,7 +134,8 @@ const updateModalCountryInformation = async (id) => {
     countryLanguages.push(countries[i].languages);
   }
   const modalImg = document.getElementById("modal-image")
-  modalImg.src = `./resources/images/${countryNames[id]}.png`
+  console.log(countryNamesLowerCase)
+  modalImg.src = `./resources/images/${countryNamesLowerCase[id]}.png`
 
   for (let i = 0; i < 9; i++) {
     const modalInfo = document.getElementsByClassName("modal-info")[i];
