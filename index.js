@@ -175,7 +175,7 @@ const darkModeToggler = () => {
   const regions = document.querySelector(".regions")
   const iconSearch = document.querySelector(".fa-search")
   const iconMoon = document.querySelector(".fa-moon")
-  const cardContainer = document.querySelector(".country-container")
+  const countryContainer = document.querySelector(".country-container")
   const countryCards = document.querySelectorAll(".country-card")
   const countryNames = document.querySelectorAll(".country-name")
   const modal = document.querySelector(".modal")
@@ -189,7 +189,7 @@ const darkModeToggler = () => {
   regions.classList.toggle("change-dark-mode-light")
   iconSearch.classList.toggle("change-dark-mode-light")
   iconMoon.classList.toggle("change-dark-mode-light")
-  cardContainer.classList.toggle("change-dark-mode")
+  countryContainer.classList.toggle("change-dark-mode")
   modal.classList.toggle("modal-dark")
 
   for (let i = 0; i < countryCards.length; i++) {
