@@ -2,5 +2,9 @@
 data.json
 .vscode
 try.js
+<<<<<<< HEAD
 node_module
 node_module/
+=======
+node_modules
+>>>>>>> e752700c4a6885f9446824e691847969984e36ca
