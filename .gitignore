@@ -2,3 +2,5 @@
 data.json
 .vscode
 try.js
+node_module
+node_module/
