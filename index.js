@@ -81,7 +81,7 @@ const handleSearch = (countryNames) => {
 };
 
 const fetchCountries = async () => {
-  const countries = await fetch('./resources/db/countries.json')
+  const countries = await fetch('https://github.com/eisukeesaki/country-explorer/blob/dev/resources/db/countries.json')
     .then((res) => res.json())
     .catch((err) => console.error(err));
 
