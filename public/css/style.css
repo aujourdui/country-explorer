@@ -1,9 +1,12 @@
 /* Reset */
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins";
   box-sizing: border-box;
   color: #333333;
+  letter-spacing: 1px;
 }
 
 body {
@@ -14,31 +17,25 @@ body {
 /* Common */
 .image-container img {
   width: 100%;
+  height: auto;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 
 /* header */
 .header {
+  width: 100%;
   box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
   margin: 0;
-}
-
-.clearfix::after {
-  content: "";
-  display: block;
-  clear: both;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
 }
 
 h2 {
-  float: left;
   font-size: 1.2rem;
   margin: 0;
   letter-spacing: 0.5px;
-  padding: 30px;
-}
-
-.dark-mode {
-  float: right;
-  padding: 30px;
 }
 
 .header p {
@@ -46,7 +43,6 @@ h2 {
 }
 
 .far.fa-moon {
-  padding: 0 10px;
   vertical-align: middle;
 }
 
@@ -68,7 +64,7 @@ h2 {
 
 .dark-mode__button {
   padding: 3px 5px;
-  border: 1px solid #333333;
+  border: 1px solid #fff;
   background-color: #fff;
   border-radius: 3px;
   transition: 0.2s;
@@ -77,6 +73,7 @@ h2 {
 
 .dark-mode__button:hover {
   background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 /* search section */
@@ -133,7 +130,7 @@ input:focus::placeholder {
 .regions {
   position: absolute;
   top: 11px;
-  left: 50px;
+  left: 40px;
   border: none;
   outline: none;
   font-size: 0.8rem;
@@ -146,7 +143,17 @@ input:focus::placeholder {
   text-align: center;
   /* background-color: #fff; */
   margin: 1rem;
+<<<<<<< HEAD:public/css/style.css
   border: 1px solid rgba(0,0,0,0.2);
+=======
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(139, 122, 122, 0.5);
+}
+
+.country-card .country-name {
+  margin: 0;
+  padding: 10px;
+>>>>>>> 46ceee5400c0dc1bd5446350926b132283ebc483:style.css
 }
 
 .country-container {
@@ -224,6 +231,7 @@ input:focus::placeholder {
 }
 
 .modal-info {
+<<<<<<< HEAD:public/css/style.css
   font-size: 1rem;
   color: rgba(0,0,0,0.9);
 }
@@ -231,3 +239,15 @@ input:focus::placeholder {
 .modal-info-container{
   margin: 1rem 0;
 }
+=======
+  font-size: 1.5rem;
+}
+
+/* description page */
+#modal-image {
+  width: 300px;
+  height: 200px;
+  border-radius: 3px;
+}
+
+>>>>>>> 46ceee5400c0dc1bd5446350926b132283ebc483:style.css
