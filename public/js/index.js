@@ -96,8 +96,8 @@ const updateCountryNames = (countryNames) => {
   }
 };
 
-const zoomIn = (countryIndex) => {
-  for (let i = 0; i < countryIndex; i++) {
+const zoomIn = (nCountries, countries) => {
+  for (let i = 0; i < nCountries; i++) {
     const countryCard = document.getElementsByClassName('country-card')[i];
     const modal = document.getElementById('myModal');
     countryCard.addEventListener('click', (e) => {
@@ -163,11 +163,37 @@ const updateModalCountryInformation = async (id) => {
   }
 };
 
+const updateBorderCountries = (countries) => {
+  const countryCards = document.querySelectorAll('.country-card');
+  const ul = document.getElementById('border-country-list');
+
+  for (let i = 0; i < countryCards.length; i++) {
+    countryCards[i].addEventListener('click', () => {
+      for (let k = 0; k < countries[i].borderCountries.length; k++) {
+        const li = document.createElement('li');
+  
+        li.classList.add('border-country');
+        li.innerHTML = countries[i].borderCountries[k];
+        ul.appendChild(li);
+      }
+    });
+  }
+}
+
 const zoomOut = () => {
   const modal = document.getElementById('myModal');
+  const ul = document.getElementById('border-country-list');
+
   modal.addEventListener('click', (e) => {
     e.preventDefault();
     modal.style.display = 'none';
+    
+    let li = ul.lastElementChild;
+  
+    while (li) {
+      ul.removeChild(li);
+      li = ul.lastElementChild;
+    }
   });
 };
 
@@ -216,8 +242,9 @@ const main = async () => {
   updateCountryNames(countryNames);
   handleSearch(countryNames);
   filterByContinent();
-  zoomIn(countries.length);
+  zoomIn(countries.length, countries);
   zoomOut();
+  updateBorderCountries(countries);
 };
 
 main();
