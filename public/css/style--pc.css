@@ -23,19 +23,41 @@
 
     /* modal */
 
+    #modal-image {
+      width: 500px;
+      height: 340px;
+      border-radius: 3px;
+    }
+
     #modal-column-first{
-      margin: 0 4rem 3rem 3rem;
+      margin: 0 4rem 0 3rem;
       }
     #modal-column-second {
       margin: 6rem 0 0 0;
+    }
+
+    #modal-column-wrapper{
+      display: flex;
+      flex-wrap: wrap;
     }
 
     #modal-content {
       width: 100%;
     }
 
+
     .border-countries {
-      margin-top: 5rem;
+      margin-left: 3.2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .border-country {
+      padding: 1rem;
+      margin: 0 1rem;
+      background-color: white;
+      border-radius: 5%;
+      box-shadow: 0px 0px 2px 2px #eeeeee;
     }
 
 		#region {
