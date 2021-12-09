@@ -27,7 +27,11 @@
       margin: 0 4rem 3rem 3rem;
       }
     #modal-column-second {
-      margin: 5.2rem 0 0 0;
+      margin: 6rem 0 0 0;
+    }
+
+    #modal-content {
+      width: 100%;
     }
 
 		#region {
@@ -89,4 +93,21 @@
         font-size: 0.8rem;
         /* color: rgba(0, 0, 0, 0.5); */
     }
+
+    /* .border-country {
+      display: none;
+    } */
+
+    .border-countries {
+      margin-top: 3rem;
+      /* display: flex;
+      justify-content: space-between;
+      width:100% */
+    }
+/* 
+    .border-country-pc{
+      display:block;
+      margin: 0 1rem;
+      padding: 1 4rem;
+    } */
 }
