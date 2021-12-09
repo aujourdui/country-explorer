@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style--pc.css" />
+    <title>Country Explorer</title>
+  </head>
+  <body>
+    <header class="header clearfix">
+      <h2 id ="title">Where in the world?</h2>
+      <div class="dark-mode">
+        <i class="far fa-moon"></i
+        ><button class="dark-mode__button" onclick="darkModeToggler()">Dark Mode</button>
+      </div>
+    </header>
+    <div class="search-container">
+      <div class="search-country">
+        <input type="text" class="search-country__input" id="search-input" placeholder="Search for a country..." />
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="filter-region">
+        <select class="regions" name="" id="">
+          <option class="region" value="All">Filter by region</option>
+          <option class="region" value="Africa">Africa</option>
+          <option class="region" value="America">America</option>
+          <option class="region" value="Asia">Asia</option>
+          <option class="region" value="Europe">Europe</option>
+          <option class="region" value="Oceania">Oceania</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- modal -->
+    <div id="myModal" class="modal">
+      <div id="modal-content">
+        <img id="modal-image" alt="#" />
+          <div id="modal-column-first">
+            <h3 class="modal-info" id="modal-country"></h3>
+            <div class= modal-info-container>
+              <span class="modal-info-title">Native Name: </span><span class="modal-info"></span>
+            </div>
+            <div class= modal-info-container>
+              <span class="modal-info-title">Population: </span><span class="modal-info"></span>
+            </div class= modal-info-container>
+            <div class= modal-info-container>
+              <span class="modal-info-title">Region: </span><span class="modal-info"></span>
+            </div>
+            <div class= modal-info-container>
+              <span class="modal-info-title">Sub Region: </span><span class="modal-info"></span>
+            </div>
+            <div class= modal-info-container>
+              <span class="modal-info-title">Capital: </span><span class="modal-info"></span>
+            </div>
+          </div>
+          <div id="modal-column-second">
+            <div class= modal-info-container>
+              <span class="modal-info-title">Top level Domain: </span><span class="modal-info"></span>
+            </div>
+            <div class= modal-info-container>
+              <span class="modal-info-title">Currencies: </span><span class="modal-info"></span>
+            </div>
+            <div class= modal-info-container>
+              <span class="modal-info-title">Languages: </span><span class="modal-info"></span>
+            </div>
+            <!-- border countries -->
+            <div class="border-countries">
+              <h3 id="border-country-title">Border Countries: </h3>
+                <ul id="border-country-list">
+                  <!-- <li class="border-country">static bc0</li> -->
+                </ul>
+            </div>
+          </div>
+
+      </div>
+    </div>
+    <!-- modal -->
+
+    <div class="country-container">
+      <div class="country-card">
+        <div class="image-container country-card__image">
+          <img class="country-image" src="resources/images/germany.png" alt="#" />
+        </div>
+        <h3 class="country-name"></h3>
+      </div>
+      <div class="country-card">
+        <div class="image-container country-card__image">
+          <img class="country-image" src="resources/images/United States of America.png" alt="#" />
+        </div>
+        <h3 class="country-name"></h3>
+      </div>
+      <div class="country-card">
+        <div class="image-container country-card__image">
+          <img class="country-image" src="resources/images/brazil.png" alt="#" />
+        </div>
+        <h3 class="country-name"></h3>
+      </div>
+      <div class="country-card">
+        <div class="image-container country-card__image">
+          <img class="country-image" src="resources/images/iceland.png" alt="#" />
+        </div>
+        <h3 class="country-name"></h3>
+      </div>
+      <div class="country-card">
+        <div class="image-container country-card__image">
+          <img class="country-image" src="resources/images/afghanistan.png" alt="#" />
+        </div>
+        <h3 class="country-name"></h3>
+      </div>
+      <div class="country-card">
+        <div class="image-container country-card__image">
+          <img class="country-image" src="resources/images/Aland Islands.png" alt="#" />
+        </div>
+        <h3 class="country-name"></h3>
+      </div>
+      <div class="country-card">
+        <div class="image-container country-card__image">
+          <img class="country-image" src="resources/images/albania.png" alt="#" />
+        </div>
+        <h3 class="country-name"></h3>
+      </div>
+      <div class="country-card">
+        <div class="image-container country-card__image">
+          <img class="country-image" src="resources/images/algeria.png" alt="#" />
+        </div>
+        <h3 class="country-name"></h3>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>
