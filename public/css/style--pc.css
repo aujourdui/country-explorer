@@ -34,14 +34,16 @@
       width: 500px;
       height: 350px;
       border-radius: 3px;
+      margin-left: 2rem;
     }
 
     #modal-content {
       width: 100%;
     }
 
-    .border-countries {
-      margin-top: 5rem;
+
+    .border-country {
+      margin: 0 1rem;
     }
 
 		#region {
