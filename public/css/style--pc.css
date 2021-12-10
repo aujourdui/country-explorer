@@ -1,142 +1,101 @@
 @media (min-width: 40rem) {
-    /* common */
-    * {
-        font-family: Arial, Helvetica, sans-serif;
-        box-sizing: border-box;
-        color: #333333;
-      }
+  /* common */
+  * {
+      font-family: Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
+      color: #333333;
+    }
 
-      body {
-        margin: 0;
-      }
+    body {
+      margin: 0;
+    }
 
-    /* countries */
-    .country-container {
-      flex-wrap: wrap;
+  /* countries */
+  .country-container {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+  }
+
+  .country-card {
+    width: 22%;
+  }
+
+  /* modal */
+
+  #modal-column-first{
+    margin: 0 4rem 3rem 3rem;
+    }
+  #modal-column-second {
+    margin: 6rem 0 0 0;
+  }
+
+  #modal-content {
+    width: 100%;
+  }
+
+  .border-countries {
+    margin-top: 5rem;
+  }
+
+  #region {
+    margin: 1rem 0;
+  }
+
+  .search-container {
       display: flex;
-      justify-content: center;
-    }
-
-    .country-card {
-      width: 22%;
-    }
-
-    /* modal */
-
-    #modal-image {
-      width: 500px;
-      height: 340px;
-      border-radius: 3px;
-    }
-
-    #modal-column-first{
-      margin: 0 4rem 0 3rem;
-      }
-    #modal-column-second {
-      margin: 6rem 0 0 0;
-    }
-
-    #modal-column-wrapper{
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    #modal-content {
-      width: 100%;
-    }
-
-<<<<<<< HEAD
-
-    .border-countries {
-      margin-left: 3.2rem;
-      display: flex;
-      align-items: center;
-    }
-
-    .border-country {
-      padding: 1rem;
-      margin: 0 1rem;
-      background-color: white;
-      border-radius: 5%;
-      box-shadow: 0px 0px 2px 2px #eeeeee;
-    }
-
-=======
->>>>>>> parent of 1ab469b (try to add border countries styling for PC)
-		#region {
-			margin: 1rem 0;
-		}
-
-    .search-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 0 30px;
-        margin-top: 20px;
-    }
-
-    .fas.fa-search {
-        /* color: rgba(0, 0, 0, 0.3); */
-        position: absolute;
-        top: 13px;
-        left: 17px;
-    }
-
-    .search-country {
-        position: relative;
-        outline: none;
-        width: 400px;
-        height: 40px;
-        border: none;
-        box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-        border-radius: 3px;
-        font-size: 0.8rem;
-    }
-
-    .search-country__input {
-        width: 300px;
-        border: none;
-        outline: none;
-    }
-
-    input:focus::placeholder {
-        color: transparent;
-    }
-
-    .filter-region {
-        position: relative;
-        outline: none;
-        width: 200px;
-        height: 40px;
-        border: none;
-        box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-        border-radius: 3px;
-    }
-
-    .regions {
-        position: absolute;
-        top: 11px;
-        left: 50px;
-        border: none;
-        outline: none;
-        font-size: 0.8rem;
-        /* color: rgba(0, 0, 0, 0.5); */
-    }
-
-    /* .border-country {
-      display: none;
-    } */
-
-    .border-countries {
-      margin-top: 3rem;
-      /* display: flex;
+      flex-direction: row;
       justify-content: space-between;
-      width:100% */
-    }
-/* 
-    .border-country-pc{
-      display:block;
-      margin: 0 1rem;
-      padding: 1 4rem;
-    } */
+      padding: 0 30px;
+      margin-top: 20px;
+  }
+
+  .fas.fa-search {
+      /* color: rgba(0, 0, 0, 0.3); */
+      position: absolute;
+      top: 13px;
+      left: 17px;
+  }
+
+  .search-country {
+      position: relative;
+      outline: none;
+      width: 400px;
+      height: 40px;
+      border: none;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+      border-radius: 3px;
+      font-size: 0.8rem;
+  }
+
+  .search-country__input {
+      width: 300px;
+      border: none;
+      outline: none;
+  }
+
+  input:focus::placeholder {
+      color: transparent;
+  }
+
+  .filter-region {
+      position: relative;
+      outline: none;
+      width: 200px;
+      height: 40px;
+      border: none;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+      border-radius: 3px;
+  }
+
+  .regions {
+      position: absolute;
+      top: 11px;
+      left: 50px;
+      border: none;
+      outline: none;
+      font-size: 0.8rem;
+      /* color: rgba(0, 0, 0, 0.5); */
+  }
+
 }
